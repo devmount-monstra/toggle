@@ -53,7 +53,7 @@ class Toggle
     }
      
     /**
-     * Math Headers
+     * Assign to view
      */
     public static function show($click, $toggle)
     {

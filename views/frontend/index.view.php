@@ -1,4 +1,8 @@
 <div class="toggle-plugin">
-	<?php echo $click; ?><br />
-	<?php echo $toggle; ?>
+	<div class='click'>
+        <?php echo $click; ?>
+        <div class='toggle'>
+            <?php echo $toggle; ?>
+        </div>
+    </div>
 </div>

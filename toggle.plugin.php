@@ -1,5 +1,8 @@
 <?php
 
+// let only monstra allow to use this script
+defined('MONSTRA_ACCESS') or die('No direct script access.');
+
 /**
  *	Toggle plugin
  *  http://api.jquery.com/slidetoggle
@@ -8,10 +11,10 @@
  *
  *	@package    Monstra
  *  @subpackage Plugins
- *	@author     Andreas Müller | DEVMOUNT <mail@devmount.de>
+ *	@author     Andreas Müller | devmount <mail@devmount.de>
  *	@license    MIT
  *	@version    0.1.2015-09-08
- *  @link       https://github.com/devmount/toggle
+ *  @link       https://github.com/devmount-monstra/toggle
  *
  */
 
@@ -26,10 +29,23 @@ Plugin::register(
     'http://devmount.de'
 );
 
+// Include plugin admin
+if (Session::exists('user_role') && in_array(Session::get('user_role'), array('admin', 'editor'))) {
+    Plugin::Admin('toggle');
+}
+
+
 /**
- * Shorcode: {toggle click="some link text" toggle="some toggle content"}
+ * Shortcode: {toggle click="some link text" toggle="some toggle content"}
  */
 Shortcode::add('toggle', 'Toggle::_shortcode');
+
+
+/**
+ * Add CSS and JavaScript
+ */
+Action::add('theme_footer', 'Toggle::_insertJS');
+Action::add('theme_header', 'Toggle::_insertCSS');
 
 
 /**
@@ -51,16 +67,48 @@ class Toggle
     {
         return Toggle::show($attributes['click'], $attributes['toggle']);
     }
+
+    /**
+     * _insertJS function
+     * 
+     * @return JavaScript to insert
+     * 
+     */
+    public static function _insertJS()
+    {
+        echo '<script type="text/javascript">
+            $(document).ready(function(){
+                $(".click").click(function(event){
+                    /* set configuration */
+                    $(this).children(".toggle").slideToggle(
+                        ' . Option::get('toggle_duration') . ',
+                        "' . Option::get('toggle_easing') . '"
+                    );
+                });
+            });
+        </script>';
+    }
+
+
+    /**
+     * _insertCSS function
+     * 
+     * @return JavaScript to insert
+     * 
+     */
+    public static function _insertCSS()
+    {
+        echo '<link rel="stylesheet" type="text/css" href="' . Option::get('siteurl') . '/plugins/toggle/css/toggle.css" />';
+    }
      
     /**
      * Assign to view
      */
-    public static function show($click, $toggle)
+    public function show($click, $toggle)
     {
         View::factory('toggle/views/frontend/index')
             ->assign('click', $click)
             ->assign('toggle', $toggle)
-            // ->render();
             ->display();
     }
 

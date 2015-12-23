@@ -20,7 +20,7 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
 
 
 // Admin Navigation: add new item
-Navigation::add(__('Toggle', 'sandbox'), 'extends', 'toggle', 10);
+Navigation::add(__('Toggle', 'toggle'), 'extends', 'toggle', 10);
 
 /**
  * Toggle class
@@ -37,9 +37,11 @@ class ToggleAdmin extends Backend
             if (Security::check(Request::post('csrf'))) {
                 Option::update('toggle_duration', (int) Request::post('toggle_duration'));
                 Option::update('toggle_easing', Request::post('toggle_easing'));
+                Notification::set('success', __('Configuration has been saved with success!', 'toggle'));
             }
             else {
-                die('Request was denied. Invalid security token. Please refresh the page and try again.');
+                Notification::set('error', __('Request was denied. Invalid security token. Please refresh the page and try again.', 'toggle'));
+                die();
             }
         }
 

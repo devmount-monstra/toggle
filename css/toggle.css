@@ -5,7 +5,13 @@
     cursor: pointer;
 }
 
+.toggle-plugin .click h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
 .toggle-plugin .toggle {
     margin-bottom: 20px;
     display: none;
+    /*border-top: 1px solid;*/
 }

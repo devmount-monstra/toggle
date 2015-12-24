@@ -1,10 +1,5 @@
 <h2><?php echo __('Toggle', 'toggle'); ?></h2>
 <br />
-<?php 
-    if(Notification::get('success')) Alert::success(Notification::get('success'));
-    if(Notification::get('error')) Alert::error(Notification::get('error'));
-?>
-
 <?php
     echo (
         Form::open() .

@@ -12,8 +12,7 @@
         <?php
             echo (
                 Form::label('toggle_duration', __('Slide duration [ms]', 'toggle')) .
-                Form::input('toggle_duration', Option::get('toggle_duration'), array('class' => 'form-control')) .
-                __('Set your snow color here. e.g. white, red, blue, etc...', 'toggle')
+                Form::input('toggle_duration', Option::get('toggle_duration'), array('class' => 'form-control'))
             );
         ?>
     </div>
@@ -21,12 +20,12 @@
         <?php
             echo (
                 Form::label('toggle_easing', __('Slide easing', 'toggle')) .
-                Form::select('toggle_easing', array('linear' => 'linear', 'swing' => 'swing'), Option::get('toggle_easing'), array('class' => 'form-control')) .
-                __('Sets the limit of "falling" snowflakes (eg. moving on the screen, thus considered to be active.)', 'toggle')
+                Form::select('toggle_easing', array('linear' => 'linear', 'swing' => 'swing'), Option::get('toggle_easing'), array('class' => 'form-control'))
             );
         ?>
     </div>
 </div>
+<br />
 
 <?php
     echo (

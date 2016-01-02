@@ -1,7 +1,7 @@
 Toggle
 ======
 
-A content toggle plugin for Monstra from [devmount](http://devmount.de).
+A content toggle by click plugin for Monstra.
 
 ### Usage
 Shortcode for content pages:
@@ -12,9 +12,12 @@ Codesnippet for templates:
 
     <?php Toggle::show('The answer to life, the universe and everything?', '42'); ?>
 
+### Options
+* __Slide duration__: How many milliseconds the sliding animation should take [integer]
+* __Slide easing__: Easing type for the sliding animation [swing or linear]
+
 ### License
 This Plugin is distributed under [MIT-License](http://opensource.org/licenses/mit-license.html).
 
-<!--### Documentation
-A detailed documentation and demo can be found on DEVMOUNT's website:
-http://devmount.de/Develop/moziloCMS/Plugins/Counter.html-->
+### Sources
+This plugin is based on the [.slideToggle()](http://api.jquery.com/slidetoggle/) method of jQuery and developed by [devmount](http://devmount.de).

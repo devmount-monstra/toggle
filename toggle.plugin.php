@@ -13,7 +13,7 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
  *  @subpackage Plugins
  *	@author     Andreas Müller | devmount <mail@devmount.de>
  *	@license    MIT
- *	@version    0.1.2015-09-08
+ *	@version    0.1.2016-01-02
  *  @link       https://github.com/devmount-monstra/toggle
  *
  */
@@ -24,7 +24,7 @@ Plugin::register(
     __FILE__,                    
     __('Toggle'),
     __('Toggle plugin for Monstra.'),  
-    '0.1.2015-09-08',
+    '0.1.2016-01-02',
     'devmount',                 
     'http://devmount.de'
 );

@@ -76,15 +76,16 @@ class Toggle
      */
     public static function _insertJS()
     {
-        echo '<script type="text/javascript">
-            $(document).ready(function(){
-                $(".click").click(function(event){
-                    /* set configuration */
+        echo
+        '<script type="text/javascript">
+            $(".click").click(function(event){
+                //activate on first click only to avoid hiding again on double clicks
+                if(event.detail==1){
                     $(this).children(".toggle").slideToggle(
                         ' . Option::get('toggle_duration') . ',
                         "' . Option::get('toggle_easing') . '"
                     );
-                });
+                }
             });
         </script>';
     }

@@ -107,10 +107,10 @@ class Toggle
      */
     public function show($click, $toggle)
     {
-        View::factory('toggle/views/frontend/index')
+        return View::factory('toggle/views/frontend/index')
             ->assign('click', $click)
             ->assign('toggle', $toggle)
-            ->display();
+            ->render();
     }
 
 }

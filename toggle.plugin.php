@@ -21,11 +21,11 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
 
 // Register plugin
 Plugin::register(
-    __FILE__,                    
+    __FILE__,
     __('Toggle'),
-    __('Toggle plugin for Monstra.'),  
+    __('Toggle plugin for Monstra.'),
     '0.1.2016-01-02',
-    'devmount',                 
+    'devmount',
     'http://devmount.de'
 );
 
@@ -50,18 +50,18 @@ Action::add('theme_header', 'Toggle::_insertCSS');
 
 /**
  * Toggle class
- * 
+ *
  * Usage: <?php Toggle::show('What is life, the universe and everything?', '42'); ?>
- * 
+ *
  */
 class Toggle
 {
     /**
      * _shortcode function
-     * 
+     *
      * @param  array $attributes given
      * @return void generated content
-     * 
+     *
      */
     public static function _shortcode($attributes)
     {
@@ -70,22 +70,19 @@ class Toggle
 
     /**
      * _insertJS function
-     * 
+     *
      * @return JavaScript to insert
-     * 
+     *
      */
     public static function _insertJS()
     {
         echo
         '<script type="text/javascript">
             $(".click").click(function(event){
-                //activate on first click only to avoid hiding again on double clicks
-                if(event.detail==1){
-                    $(this).children(".toggle").slideToggle(
-                        ' . Option::get('toggle_duration') . ',
-                        "' . Option::get('toggle_easing') . '"
-                    );
-                }
+                $(this).children(".toggle").slideToggle(
+                    ' . Option::get('toggle_duration') . ',
+                    "' . Option::get('toggle_easing') . '"
+                );
             });
         </script>';
     }
@@ -93,15 +90,15 @@ class Toggle
 
     /**
      * _insertCSS function
-     * 
+     *
      * @return JavaScript to insert
-     * 
+     *
      */
     public static function _insertCSS()
     {
         echo '<link rel="stylesheet" type="text/css" href="' . Option::get('siteurl') . '/plugins/toggle/css/toggle.css" />';
     }
-     
+
     /**
      * Assign to view
      */

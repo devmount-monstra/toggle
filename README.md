@@ -35,4 +35,8 @@ Codesnippet for templates:
 This Plugin is distributed under [MIT-License](http://opensource.org/licenses/mit-license.html).
 
 ## Sources
-This plugin is based on the [.slideToggle()](http://api.jquery.com/slidetoggle/) method of jQuery and developed by [devmount](http://devmount.de)
+This plugin is based on the [.slideToggle()](http://api.jquery.com/slidetoggle/) method of jQuery
+
+---
+developed by [devmount ![devmount logo](http://media.devmount.de/devmount_small_dark.png)](http://devmount.de)
+

@@ -7,6 +7,7 @@ return array(
         'Slide duration [ms]' => 'Slide duration [ms]',
         'Slide easing' => 'Slide easing',
         'Save' => 'Save',
+        'Documentation' => 'Documentation',
         'Configuration has been saved with success!' => 'Configuration has been saved with success!',
         'Request was denied. Invalid security token. Please refresh the page and try again.' => 'Request was denied. Invalid security token. Please refresh the page and try again.'
     )

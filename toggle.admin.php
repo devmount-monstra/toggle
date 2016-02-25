@@ -17,8 +17,10 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
  *
  */
 
+// Add plugin styles and scripts
+Javascript::add('plugins/toggle/js/toggle.admin.js', 'backend', 11);
 
-// Admin Navigation: add new item
+// Admin Navigation: add new item to 'extends' section
 Navigation::add(__('Toggle', 'toggle'), 'extends', 'toggle', 10);
 
 /**
@@ -32,7 +34,8 @@ class ToggleAdmin extends Backend
      */
     public static function main()
     {
-        if (Request::post('toggle_submitted')) {
+        // handle option form submit
+        if (Request::post('toggle_options')) {
             if (Security::check(Request::post('csrf'))) {
                 Option::update('toggle_duration', (int) Request::post('toggle_duration'));
                 Option::update('toggle_easing', Request::post('toggle_easing'));
@@ -42,6 +45,7 @@ class ToggleAdmin extends Backend
                 Notification::set('error', __('Request was denied. Invalid security token. Please refresh the page and try again.', 'toggle'));
                 die();
             }
+            Request::redirect('index.php?id=toggle');
         }
 
         // Display view

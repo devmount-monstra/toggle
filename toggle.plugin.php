@@ -13,7 +13,6 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
  *  @subpackage Plugins
  *	@author     Andreas Müller | devmount <mail@devmount.de>
  *	@license    MIT
- *	@version    0.1.2016-01-02
  *  @link       https://github.com/devmount-monstra/toggle
  *
  */
@@ -24,7 +23,7 @@ Plugin::register(
     __FILE__,
     __('Toggle'),
     __('Toggle plugin for Monstra.'),
-    '0.1.2016-01-02',
+    '0.2.2016-02-25',
     'devmount',
     'http://devmount.de'
 );
@@ -35,15 +34,11 @@ if (Session::exists('user_role') && in_array(Session::get('user_role'), array('a
 }
 
 
-/**
- * Shortcode: {toggle click="some link text" toggle="some toggle content"}
- */
+// Shortcode: {toggle click="some link text" toggle="some toggle content"}
 Shortcode::add('toggle', 'Toggle::_shortcode');
 
 
-/**
- * Add CSS and JavaScript
- */
+// Add CSS and JavaScript
 Action::add('theme_footer', 'Toggle::_insertJS');
 Action::add('theme_header', 'Toggle::_insertCSS');
 
@@ -57,11 +52,11 @@ Action::add('theme_header', 'Toggle::_insertCSS');
 class Toggle
 {
     /**
-     * _shortcode function
+     * _shortcode
      *
      * @param  array $attributes given
+     * 
      * @return void generated content
-     *
      */
     public static function _shortcode($attributes)
     {
@@ -69,10 +64,9 @@ class Toggle
     }
 
     /**
-     * _insertJS function
+     * _insertJS
      *
      * @return JavaScript to insert
-     *
      */
     public static function _insertJS()
     {
@@ -89,10 +83,9 @@ class Toggle
 
 
     /**
-     * _insertCSS function
+     * _insertCSS
      *
      * @return JavaScript to insert
-     *
      */
     public static function _insertCSS()
     {
@@ -100,7 +93,12 @@ class Toggle
     }
 
     /**
-     * Assign to view
+     * show
+     *
+     * @param  string $click text to click
+     * @param  string $toggle text to toggle on click
+     * 
+     * @return rendered view
      */
     public function show($click, $toggle)
     {

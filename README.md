@@ -38,5 +38,4 @@ This Plugin is distributed under [MIT-License](http://opensource.org/licenses/mi
 This plugin is based on the [.slideToggle()](http://api.jquery.com/slidetoggle/) method of jQuery
 
 ---
-developed by [devmount ![devmount logo](http://media.devmount.de/devmount_small_dark.png)](http://devmount.de)
-
+created by [devmount ![devmount logo](http://media.devmount.de/devmount_small_dark.png)](http://devmount.de)

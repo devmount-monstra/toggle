@@ -5,7 +5,7 @@
     <plugin_priority>10</plugin_priority>
     <plugin_name>Toggle</plugin_name>
     <plugin_description>Content toggle plugin for Monstra.</plugin_description>
-    <plugin_version>0.2.2016-02-25</plugin_version>
+    <plugin_version>1.2</plugin_version>
     <plugin_author>devmount</plugin_author>
     <plugin_author_uri>http://devmount.de</plugin_author_uri>
 </root>

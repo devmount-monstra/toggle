@@ -9,6 +9,7 @@
 .toggle-plugin .click h3 {
     font-size: 1.5em;
     margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .toggle-plugin .toggle {

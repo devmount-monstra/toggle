@@ -4,8 +4,7 @@ Toggle
 A content toggle by click plugin for Monstra.
 
 ## Version
-* **0.2.2016-02-25**
-* 0.1.2016-01-02
+#### [**v1.2**](https://github.com/devmount-monstra/toggle/releases/tag/v1.2) - 2016-04-29
 
 Here is a [list of all releases](https://github.com/devmount-monstra/toggle/releases) of `Toggle`
 

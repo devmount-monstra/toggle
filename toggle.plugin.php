@@ -23,7 +23,7 @@ Plugin::register(
     __FILE__,
     __('Toggle'),
     __('Toggle plugin for Monstra.'),
-    '0.2.2016-02-25',
+    '1.2',
     'devmount',
     'http://devmount.de'
 );
@@ -55,7 +55,7 @@ class Toggle
      * _shortcode
      *
      * @param  array $attributes given
-     * 
+     *
      * @return void generated content
      */
     public static function _shortcode($attributes)
@@ -97,7 +97,7 @@ class Toggle
      *
      * @param  string $click text to click
      * @param  string $toggle text to toggle on click
-     * 
+     *
      * @return rendered view
      */
     public function show($click, $toggle)

@@ -21,8 +21,8 @@ defined('MONSTRA_ACCESS') or die('No direct script access.');
 // Register plugin
 Plugin::register(
     __FILE__,
-    __('Toggle'),
-    __('Toggle plugin for Monstra.'),
+    __('Toggle', 'toggle'),
+    __('Toggle plugin for Monstra.', 'toggle'),
     '1.2',
     'devmount',
     'http://devmount.de'

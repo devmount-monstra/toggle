@@ -23,7 +23,7 @@ Plugin::register(
     __FILE__,
     __('Toggle', 'toggle'),
     __('Toggle plugin for Monstra.', 'toggle'),
-    '1.2',
+    '1.3',
     'devmount',
     'http://devmount.de'
 );
